@@ -1,3 +1,4 @@
+const config = require ("./config")
 const express      = require('express');
 const path         = require('path');
 const favicon      = require('serve-favicon');
@@ -9,13 +10,14 @@ const mongoose     = require('mongoose');
 const session      = require('express-session');
 const MongoStore   = require('connect-mongo')(session);
 
+
 //Aqui declaramos las rutas para ser utilizadas más abajo
 const authRoutes = require ("./routes/auth.js")
 const index = require('./routes/index');
 const campaignRoutes = require ("./routes/campaign.js")
 
-mongoose.connect('mongodb://localhost/ironfunding')
-  .then(console.log("connected to DB!!"));
+mongoose.connect(config.mongoUrl)
+  .then(console.log(`connected to ${config.mongoUrl}!!`));
 
 const app = express();
 
