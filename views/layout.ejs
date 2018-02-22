@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title><%= title %></title>
+    <script src="/dist/jquery/jquery.min.js" charset="utf-8"></script>
+    <script src="/dist/bootstrap/js/bootstrap.min.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="/dist/bootstrap/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="/stylesheets/style.css">
+  </head>
+  <body>
+      <nav class="navbar">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#home-nav" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+    
+            <div class="collapse navbar-collapse" id="home-nav">
+              <ul class="nav navbar-nav">
+                <li><a href="#">Start a Project</a></li>
+                <li class="nav-logo">
+                  <a href="#" class="nav-logo-link">
+                    <img class="nav-logo-image" src="https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/upload_8c904a3bee158b96cdaf0cad6900b4b2.png" alt="Kickstarter Logo">
+                  </a>
+                </li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <li>
+                  <a href="#">
+                    <span class="glyphicon glyphicon-search"></span>
+                  </a>
+                </li>
+                <li><a href="/user/login">Login</a></li>
+                <li><a href="/user/signup">Signup</a></li>
+                <li><a href="/myProfile">Profile</a></li>
+                <li>
+                  <form action="/user/logout" method="POST">
+                  <button class="btn btn-link btn-logout" type="submit">Logout</a>
+                  </form>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+    <%- body %>
+  </body>
+</html>
