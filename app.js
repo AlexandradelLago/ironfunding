@@ -12,6 +12,7 @@ const MongoStore   = require('connect-mongo')(session);
 //Aqui declaramos las rutas para ser utilizadas más abajo
 const authRoutes = require ("./routes/auth.js")
 const index = require('./routes/index');
+const campaignRoutes = require ("./routes/campaign.js")
 
 mongoose.connect('mongodb://localhost/ironfunding')
   .then(console.log("connected to DB!!"));
@@ -51,6 +52,7 @@ require ("./config/passport")(app)
 //Usamos rutas
 app.use('/', index);
 app.use('/user',authRoutes)
+app.use('/campaign',campaignRoutes)
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
